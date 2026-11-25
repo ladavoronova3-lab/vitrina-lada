@@ -160,7 +160,7 @@ h1 .lime{color:var(--terra)}
   transition:border-color .25s ease,transform .25s ease;
 }
 .work:hover{border-color:rgba(199,91,30,.45);transform:translateY(-3px)}
-.work img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.work img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 .work:hover img{transform:scale(1.045)}
 .work-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(59,33,16,0) 40%,rgba(59,33,16,.85) 100%)}
 .work-info{position:absolute;inset:auto 0 0 0;padding:22px 24px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
@@ -290,8 +290,10 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0 44px}
   .sec{padding:90px 0}
   .niche-grid{grid-template-columns:1fr}
   .works-grid{grid-template-columns:1fr;grid-auto-rows:auto}
-  .work{grid-column:span 1 !important;grid-row:span 1 !important;min-height:300px}
-  .w-b,.w-e{min-height:420px}
+  .work{grid-column:span 1 !important;grid-row:auto !important;min-height:0}
+  .w-a,.w-f{aspect-ratio:1520/780}
+  .w-b,.w-e{aspect-ratio:860/1210}
+  .w-c,.w-d{aspect-ratio:1000/1050}
   .socials{grid-template-columns:1fr}
   .lighthouse{right:8%}
   .hero{padding-top:120px}
@@ -420,7 +422,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0 44px}
     </div>
     <div class="works-grid">
       <button class="work w-a rv" data-work="remont">
-        <img src="assets/works/remont.png" alt="Сайт ремонтной бригады «Стекло и ремонт»" loading="lazy">
+        <img src="assets/works/m-remont.jpg" alt="Сайт ремонтной бригады «Стекло и ремонт»" loading="lazy">
         <div class="work-shade"></div>
         <div class="work-info">
           <div><span class="mono">ремонт и стекло · <b>деловой стиль</b></span><h3>Стекло и ремонт</h3></div>
@@ -428,7 +430,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0 44px}
         </div>
       </button>
       <button class="work w-b rv" data-work="lapki">
-        <img src="assets/works/lapki.png" alt="Сайт груминг-студии «Лапки и Пена»" loading="lazy">
+        <img src="assets/works/m-lapki.jpg" alt="Сайт груминг-студии «Лапки и Пена»" loading="lazy">
         <div class="work-shade"></div>
         <div class="work-info">
           <div><span class="mono">груминг-студия · <b>эмоциональный стиль</b></span><h3>Лапки и Пена</h3></div>
@@ -436,7 +438,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0 44px}
         </div>
       </button>
       <button class="work w-c rv" data-work="dallas">
-        <img src="assets/works/dallas.jpg" alt="Сайт барбершопа «Dallas»" loading="lazy">
+        <img src="assets/works/m-dallas.jpg" alt="Сайт барбершопа «Dallas»" loading="lazy">
         <div class="work-shade"></div>
         <div class="work-info">
           <div><span class="mono">барбершоп · <b>деловой стиль</b></span><h3>Dallas</h3></div>
@@ -444,7 +446,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0 44px}
         </div>
       </button>
       <button class="work w-d rv" data-work="pion">
-        <img src="assets/works/pion.jpg" alt="Сайт цветочной мастерской «Пион и Ко»" loading="lazy">
+        <img src="assets/works/m-pion.jpg" alt="Сайт цветочной мастерской «Пион и Ко»" loading="lazy">
         <div class="work-shade"></div>
         <div class="work-info">
           <div><span class="mono">цветочная мастерская · <b>эмоциональный стиль</b></span><h3>Пион &amp; Co</h3></div>
@@ -452,7 +454,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0 44px}
         </div>
       </button>
       <button class="work w-e rv" data-work="diana">
-        <img src="assets/works/diana.jpg" alt="Сайт эксперта по ИИ-видео «Диана»" loading="lazy">
+        <img src="assets/works/m-diana.jpg" alt="Сайт эксперта по ИИ-видео «Диана»" loading="lazy">
         <div class="work-shade"></div>
         <div class="work-info">
           <div><span class="mono">личный бренд · <b>деловой стиль</b></span><h3>Диана</h3></div>
@@ -460,7 +462,7 @@ footer{border-top:1px solid var(--line-soft);padding:34px 0 44px}
         </div>
       </button>
       <button class="work w-f rv" data-work="podarki">
-        <img src="assets/works/podarki.jpg" alt="Сайт новогодних подарков «Подарки с любовью»" loading="lazy">
+        <img src="assets/works/m-podarki.jpg" alt="Сайт новогодних подарков «Подарки с любовью»" loading="lazy">
         <div class="work-shade"></div>
         <div class="work-info">
           <div><span class="mono">новогодние подарки · <b>эмоциональный стиль</b></span><h3>Подарки с любовью</h3></div>
