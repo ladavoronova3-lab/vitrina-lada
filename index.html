@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лада — создаю сайты под ваш бизнес · витрина работ</title>
+<meta name="description" content="Создаю сайты под ваш бизнес в диалоге с ИИ: лендинги, сайты-визитки и каталоги для малого бизнеса. Деловой и эмоциональный стиль — под характер вашей ниши.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C75B1E'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23F9E8CC'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F9E8CC;
+  --cream-2:#F3D9B0;
+  --cream-3:#EFCFA0;
+  --line:rgba(64,35,15,.14);
+  --line-soft:rgba(64,35,15,.08);
+  --ink:#3B2110;
+  --muted:#8A6748;
+  --terra:#C75B1E;
+  --terra-deep:#9E4717;
+  --terra-soft:rgba(199,91,30,.12);
+  --terra-ink:#FFF6E8;
+  --display:'Unbounded',sans-serif;
+  --text:'Manrope',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--text);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--terra);color:var(--terra-ink)}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+img{display:block;max-width:100%}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+section{position:relative}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px;border-radius:2px}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:rgba(249,232,204,.72);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1200px;margin:0 auto;padding:0 24px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--terra);box-shadow:0 0 12px rgba(199,91,30,.55)}
+.nav-links{display:flex;gap:32px}
+.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .2s ease}
+.nav-links a:hover{color:var(--terra)}
+.cta-mini{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--terra-ink);background:var(--terra);border:none;border-radius:999px;
+  padding:10px 20px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;display:inline-block;
+}
+.cta-mini:hover{transform:translateY(-1px);background:var(--terra-deep);box-shadow:0 6px 24px rgba(199,91,30,.3)}
+
+/* ---------- hero ---------- */
+.hero{min-height:100dvh;display:flex;align-items:center;overflow:hidden;padding:140px 0 90px;
+  background:linear-gradient(160deg,var(--cream) 0%,var(--cream) 45%,var(--cream-2) 100%)}
+.beams{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.6s ease}
+.hero.in .beams{opacity:1}
+.beams svg{position:absolute;inset:0;width:100%;height:100%;preserveAspectRatio:xMidYMid slice}
+.beam-layer{transform-origin:72% 38%;animation:beamspin linear infinite}
+.beam-layer.l1{animation-duration:70s}
+.beam-layer.l2{animation-duration:95s;animation-direction:reverse}
+.beam-layer.l3{animation-duration:120s}
+@keyframes beamspin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.lighthouse{
+  position:absolute;top:34%;right:11%;width:10px;height:10px;border-radius:50%;
+  background:var(--terra);box-shadow:0 0 24px 6px rgba(199,91,30,.5),0 0 90px 30px rgba(230,140,70,.4);
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero-tags{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:42px}
+.hero-tags .mono b{color:var(--terra);font-weight:500}
+h1{
+  font-family:var(--display);
+  font-size:clamp(38px,7.2vw,104px);
+  line-height:1.04;
+  letter-spacing:-.015em;
+  text-transform:uppercase;
+  font-variation-settings:'wght' 430;
+  max-width:14ch;
+  color:var(--ink);
+}
+h1 .w{display:inline-block;transition:font-variation-settings .18s ease}
+h1 .lime{color:var(--terra)}
+.hero-sub{margin-top:36px;max-width:52ch;color:var(--muted);font-size:17px}
+.hero-sub b{color:var(--ink);font-weight:700}
+.hero-cta{margin-top:44px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--terra);color:var(--terra-ink);
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  border:none;border-radius:999px;padding:16px 30px;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.btn-primary:hover{transform:translateY(-2px);background:var(--terra-deep);box-shadow:0 10px 34px rgba(199,91,30,.35)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:10px;
+  background:transparent;color:var(--ink);
+  font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:999px;padding:16px 30px;
+  transition:border-color .2s ease,color .2s ease;
+}
+.btn-ghost:hover{border-color:var(--terra);color:var(--terra)}
+.hero-hint{margin-top:70px;display:flex;align-items:center;gap:12px}
+.hero-hint .bar{width:44px;height:1px;background:var(--line)}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+
+/* ---------- marquee ---------- */
+.marquee{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:20px 0;overflow:hidden;white-space:nowrap;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.marquee-track{display:inline-flex;animation:marq 36s linear infinite;will-change:transform}
+.marquee span{font-family:var(--display);font-weight:300;font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);padding:0 26px;display:inline-flex;align-items:center;gap:26px}
+.marquee span i{width:5px;height:5px;border-radius:50%;background:var(--terra);display:inline-block}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- section head ---------- */
+.sec{padding:130px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:64px;flex-wrap:wrap}
+.sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4.4vw,56px);line-height:1.08;text-transform:uppercase;letter-spacing:-.01em;max-width:16ch}
+.sec-head .mono{max-width:260px;text-align:right;line-height:1.9}
+
+/* ---------- niches ---------- */
+.niche-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.niche{
+  border:1px solid var(--line-soft);border-radius:14px;background:rgba(255,250,240,.45);
+  padding:28px 24px;display:flex;flex-direction:column;gap:14px;
+  transition:border-color .25s ease,transform .25s ease,background .25s ease;
+}
+.niche:hover{border-color:rgba(199,91,30,.45);transform:translateY(-3px);background:var(--terra-soft)}
+.niche h3{font-family:var(--display);font-weight:500;font-size:17px;text-transform:uppercase;line-height:1.25}
+.niche ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.niche li{color:var(--muted);font-size:14px;padding-left:20px;position:relative}
+.niche li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--terra)}
+
+/* ---------- works bento ---------- */
+.works-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;grid-auto-flow:dense;gap:16px}
+.work{
+  position:relative;border-radius:14px;overflow:hidden;background:var(--cream-2);
+  border:1px solid var(--line-soft);text-align:left;padding:0;
+  transition:border-color .25s ease,transform .25s ease;
+}
+.work:hover{border-color:rgba(199,91,30,.45);transform:translateY(-3px)}
+.work img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.work:hover img{transform:scale(1.045)}
+.work-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(59,33,16,0) 40%,rgba(59,33,16,.85) 100%)}
+.work-info{position:absolute;inset:auto 0 0 0;padding:22px 24px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
+.work-info h3{font-family:var(--display);font-weight:500;font-size:clamp(15px,1.5vw,20px);text-transform:uppercase;letter-spacing:.01em;margin-top:6px;color:#FFF6E8}
+.work-info .mono{font-size:10px;color:rgba(255,246,232,.8)}
+.work-info .mono b{color:#F0B27A;font-weight:500}
+.work-arrow{
+  flex:none;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,246,232,.4);
+  display:grid;place-items:center;color:#FFF6E8;
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.work:hover .work-arrow{background:var(--terra);border-color:var(--terra)}
+.w-a{grid-column:span 4;grid-row:span 3}
+.w-b{grid-column:span 2;grid-row:span 4}
+.w-c{grid-column:span 2;grid-row:span 3}
+.w-d{grid-column:span 2;grid-row:span 3}
+.w-e{grid-column:span 2;grid-row:span 4}
+.w-f{grid-column:span 4;grid-row:span 3}
+.w-g{grid-column:span 6;grid-row:span 3}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px) scale(.985);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:none}
+
+/* ---------- calculator ---------- */
+.calc{border:1px solid var(--line-soft);border-radius:18px;background:rgba(255,250,240,.5);padding:44px 40px;display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:start}
+.calc-group{margin-bottom:30px}
+.calc-group .mono{display:block;margin-bottom:14px;color:var(--terra)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:999px;padding:11px 20px;background:transparent;color:var(--ink);
+  transition:border-color .2s ease,background .2s ease,color .2s ease;
+}
+.chip:hover{border-color:var(--terra)}
+.chip.sel{background:var(--terra);border-color:var(--terra);color:var(--terra-ink)}
+.calc-result{
+  border-radius:14px;background:var(--ink);color:var(--terra-ink);padding:32px 28px;
+  position:sticky;top:96px;
+}
+.calc-result .mono{color:rgba(255,246,232,.6)}
+.calc-price{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,40px);color:#F0B27A;margin:14px 0 8px;line-height:1.1;white-space:nowrap}
+.calc-note{font-size:13px;color:rgba(255,246,232,.65);margin-bottom:24px}
+.calc-result .btn-primary{width:100%;justify-content:center}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:start}
+.about-big{font-family:var(--display);font-weight:400;font-size:clamp(21px,2.6vw,32px);line-height:1.35}
+.about-big em{font-style:normal;color:var(--terra)}
+.about-text{margin-top:34px;color:var(--muted);max-width:54ch}
+.about-text p+p{margin-top:18px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;margin-top:8px}
+.stat{background:var(--cream-2);padding:30px 26px}
+.stat b{font-family:var(--display);font-weight:600;font-size:clamp(26px,3vw,40px);color:var(--terra);display:block;line-height:1}
+.stat span{display:block;margin-top:12px}
+.steps{margin-top:64px;border-top:1px solid var(--line-soft)}
+.step{display:grid;grid-template-columns:80px 1fr 2fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line-soft);align-items:baseline}
+.step .mono{color:var(--terra)}
+.step h4{font-family:var(--display);font-weight:500;font-size:16px;text-transform:uppercase}
+.step p{color:var(--muted);font-size:15px}
+
+/* ---------- contacts ---------- */
+.contacts{padding:150px 0 120px}
+.contacts h2{font-family:var(--display);font-weight:700;font-size:clamp(44px,9vw,128px);line-height:.98;text-transform:uppercase;letter-spacing:-.02em}
+.contacts h2 .lime{color:var(--terra)}
+.socials{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:70px;max-width:760px}
+.soc{
+  display:flex;flex-direction:column;gap:14px;padding:30px 28px;
+  border:1px solid var(--line);border-radius:14px;background:rgba(255,250,240,.4);
+  transition:border-color .25s ease,background .25s ease,transform .25s ease;
+}
+.soc:hover{border-color:var(--terra);background:var(--terra-soft);transform:translateY(-3px)}
+.soc .mono{color:var(--terra)}
+.soc-name{font-family:var(--display);font-weight:500;font-size:20px;text-transform:uppercase}
+.soc-handle{color:var(--muted);font-family:var(--mono);font-size:13px;letter-spacing:.06em}
+.contacts-foot{margin-top:56px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line-soft);padding:34px 0 44px}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+.modal.open{display:flex}
+.modal-back{position:absolute;inset:0;background:rgba(43,22,8,.66);backdrop-filter:blur(8px);opacity:0;transition:opacity .3s ease}
+.modal.open .modal-back{opacity:1}
+.modal-card{
+  position:relative;max-width:940px;width:100%;max-height:88dvh;overflow:auto;
+  background:#FFF3E0;border:1px solid var(--line);border-radius:18px;
+  transform:scale(.96) translateY(10px);opacity:0;transition:transform .3s ease,opacity .3s ease;
+}
+.modal.open .modal-card{transform:none;opacity:1}
+.modal-card img{width:100%;max-height:52dvh;object-fit:cover;object-position:top}
+.modal-body{padding:34px 38px 40px}
+.modal-body h3{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.6vw,30px);text-transform:uppercase;margin:10px 0 16px}
+.modal-body p{color:var(--muted);max-width:62ch}
+.modal-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--muted)}
+.tag.hl{border-color:rgba(199,91,30,.5);color:var(--terra)}
+.modal-link{display:inline-flex;margin-top:28px}
+.modal-close{
+  position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;
+  background:rgba(59,33,16,.55);border:1px solid var(--line);color:#FFF6E8;
+  font-size:18px;display:grid;place-items:center;z-index:2;
+  transition:background .2s ease,border-color .2s ease;
+}
+.modal-close:hover{background:var(--terra);border-color:var(--terra)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .niche-grid{grid-template-columns:repeat(2,1fr)}
+  .works-grid{grid-template-columns:repeat(4,1fr)}
+  .w-a,.w-f{grid-column:span 4}
+  .w-b,.w-e{grid-column:span 2;grid-row:span 4}
+  .w-c,.w-d{grid-column:span 2;grid-row:span 3}
+  .w-g{grid-column:span 4;grid-row:span 3}
+  .about-grid{grid-template-columns:1fr;gap:50px}
+  .calc{grid-template-columns:1fr;gap:34px}
+  .calc-result{position:static}
+  .step{grid-template-columns:60px 1fr;grid-template-rows:auto auto}
+  .step p{grid-column:2}
+}
+@media (max-width:640px){
+  .nav-links{display:none}
+  .brand{font-size:10px;letter-spacing:.14em;white-space:nowrap}
+  .cta-mini{font-size:10px;padding:10px 14px;white-space:nowrap}
+  .sec{padding:90px 0}
+  .niche-grid{grid-template-columns:1fr}
+  .works-grid{grid-template-columns:1fr;grid-auto-rows:auto}
+  .work{grid-column:span 1 !important;grid-row:span 1 !important;min-height:300px}
+  .w-b,.w-e{min-height:420px}
+  .socials{grid-template-columns:1fr}
+  .lighthouse{right:8%}
+  .hero{padding-top:120px}
+  .calc{padding:30px 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top"><span class="dot"></span>Лада&nbsp;·&nbsp;сайты для бизнеса</a>
+    <div class="nav-links">
+      <a href="#niches">Ниши</a>
+      <a href="#works">Работы</a>
+      <a href="#calc">Расчёт</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+    <a class="cta-mini" href="#contacts">Обсудить проект</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="beams" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <g class="beam-layer l1" fill="#C75B1E" opacity=".07">
+        <rect x="-200" y="180" width="1900" height="6" transform="rotate(-16 720 450)"/>
+        <rect x="-200" y="430" width="1900" height="6" transform="rotate(-52 720 450)"/>
+      </g>
+      <g class="beam-layer l2" fill="#C75B1E" opacity=".09">
+        <rect x="-200" y="300" width="1900" height="8" transform="rotate(-35 720 450)"/>
+        <rect x="-200" y="620" width="1900" height="5" transform="rotate(-74 720 450)"/>
+      </g>
+      <g class="beam-layer l3" fill="#C75B1E" opacity=".055">
+        <rect x="-200" y="80" width="1900" height="5" transform="rotate(-23 720 450)"/>
+        <rect x="-200" y="700" width="1900" height="7" transform="rotate(-63 720 450)"/>
+      </g>
+    </svg>
+  </div>
+  <div class="lighthouse" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-tags rv">
+      <span class="mono">01 / лада / 2026</span>
+      <span class="mono">палитра / <b>#C75B1E</b></span>
+      <span class="mono">сделано в диалоге с ИИ</span>
+    </div>
+    <h1 id="hero-title" class="rv">Создаю сайты под ваш бизнес</h1>
+    <p class="hero-sub rv">Я — <b>Лада</b>. Собираю сайты в диалоге с ИИ — <b>быстро, без шаблонов и конструкторов</b>.</p>
+    <div class="hero-cta rv">
+      <a class="btn-primary" href="#works">Смотреть работы
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+      <a class="btn-ghost" href="#calc">Рассчитать стоимость</a>
+    </div>
+    <div class="hero-hint rv">
+      <span class="bar"></span>
+      <span class="mono pulse">двигайте курсором — меняется вес букв</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee-track">
+    <span>Ремонт и стекло <i></i></span><span>Груминг-студия <i></i></span><span>Барбершоп <i></i></span><span>Цветочная мастерская <i></i></span><span>Торты на заказ <i></i></span><span>Новогодние подарки <i></i></span><span>Личный бренд <i></i></span>
+  </div>
+</div>
+
+<!-- ================= NICHES ================= -->
+<section class="sec" id="niches">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Что получит ваш бизнес</h2>
+      <p class="mono">02 / не «красивый сайт», а инструмент: клиент записывается, считает цену и звонит сам</p>
+    </div>
+    <div class="niche-grid">
+      <div class="niche rv">
+        <h3>Услуги и ремонт</h3>
+        <ul>
+          <li>Смета или прайс до звонка</li>
+          <li>Фото работ и отчёты</li>
+          <li>Заявка вам в телефон</li>
+        </ul>
+      </div>
+      <div class="niche rv">
+        <h3>Красота и здоровье</h3>
+        <ul>
+          <li>Запись к мастеру онлайн</li>
+          <li>Прайс с вкладками</li>
+          <li>Отзывы со звёздами</li>
+        </ul>
+      </div>
+      <div class="niche rv">
+        <h3>Еда и подарки</h3>
+        <ul>
+          <li>Витрина с ценами</li>
+          <li>Заказ в WhatsApp / Telegram</li>
+          <li>Доставка и предзаказ</li>
+        </ul>
+      </div>
+      <div class="niche rv">
+        <h3>Эксперты и блогеры</h3>
+        <ul>
+          <li>Личный бренд с характером</li>
+          <li>Услуги и кейсы</li>
+          <li>Кнопка «обсудить задачу»</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORKS ================= -->
+<section class="sec" id="works" style="border-top:1px solid var(--line-soft)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Витрина работ</h2>
+      <p class="mono">03 / два стиля: деловой и эмоциональный. Нажмите на работу, чтобы раскрыть детали</p>
+    </div>
+    <div class="works-grid">
+      <button class="work w-a rv" data-work="remont">
+        <img src="assets/works/remont.png" alt="Сайт ремонтной бригады «Стекло и ремонт»" loading="lazy">
+        <div class="work-shade"></div>
+        <div class="work-info">
+          <div><span class="mono">ремонт и стекло · <b>деловой стиль</b></span><h3>Стекло и ремонт</h3></div>
+          <span class="work-arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </button>
+      <button class="work w-b rv" data-work="lapki">
+        <img src="assets/works/lapki.png" alt="Сайт груминг-студии «Лапки и Пена»" loading="lazy">
+        <div class="work-shade"></div>
+        <div class="work-info">
+          <div><span class="mono">груминг-студия · <b>эмоциональный стиль</b></span><h3>Лапки и Пена</h3></div>
+          <span class="work-arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </button>
+      <button class="work w-c rv" data-work="dallas">
+        <img src="assets/works/dallas.jpg" alt="Сайт барбершопа «Dallas»" loading="lazy">
+        <div class="work-shade"></div>
+        <div class="work-info">
+          <div><span class="mono">барбершоп · <b>деловой стиль</b></span><h3>Dallas</h3></div>
+          <span class="work-arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </button>
+      <button class="work w-d rv" data-work="pion">
+        <img src="assets/works/pion.jpg" alt="Сайт цветочной мастерской «Пион и Ко»" loading="lazy">
+        <div class="work-shade"></div>
+        <div class="work-info">
+          <div><span class="mono">цветочная мастерская · <b>эмоциональный стиль</b></span><h3>Пион &amp; Co</h3></div>
+          <span class="work-arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </button>
+      <button class="work w-e rv" data-work="diana">
+        <img src="assets/works/diana.jpg" alt="Сайт эксперта по ИИ-видео «Диана»" loading="lazy">
+        <div class="work-shade"></div>
+        <div class="work-info">
+          <div><span class="mono">личный бренд · <b>деловой стиль</b></span><h3>Диана</h3></div>
+          <span class="work-arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </button>
+      <button class="work w-f rv" data-work="podarki">
+        <img src="assets/works/podarki.jpg" alt="Сайт новогодних подарков «Подарки с любовью»" loading="lazy">
+        <div class="work-shade"></div>
+        <div class="work-info">
+          <div><span class="mono">новогодние подарки · <b>эмоциональный стиль</b></span><h3>Подарки с любовью</h3></div>
+          <span class="work-arrow"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALC ================= -->
+<section class="sec" id="calc" style="border-top:1px solid var(--line-soft)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Посчитайте свой сайт за 20 секунд</h2>
+      <p class="mono">04 / три вопроса — и у вас ориентир по бюджету</p>
+    </div>
+    <div class="calc rv">
+      <div>
+        <div class="calc-group">
+          <span class="mono">шаг 1 · тип сайта</span>
+          <div class="chips" data-group="type">
+            <button class="chip sel" data-price="15000">Лендинг</button>
+            <button class="chip" data-price="25000">Сайт-визитка</button>
+            <button class="chip" data-price="40000">Каталог / магазин</button>
+          </div>
+        </div>
+        <div class="calc-group">
+          <span class="mono">шаг 2 · стиль</span>
+          <div class="chips" data-group="style">
+            <button class="chip sel" data-price="0">Деловой</button>
+            <button class="chip" data-price="5000">Эмоциональный</button>
+          </div>
+        </div>
+        <div class="calc-group">
+          <span class="mono">шаг 3 · сроки</span>
+          <div class="chips" data-group="speed">
+            <button class="chip sel" data-price="0">Спокойно · 7–10 дней</button>
+            <button class="chip" data-price="8000">Быстро · 3–4 дня</button>
+          </div>
+        </div>
+      </div>
+      <div class="calc-result">
+        <span class="mono">ваш ориентир</span>
+        <div class="calc-price" id="calc-price">от 15 000 ₽</div>
+        <p class="calc-note">Точная цена — после короткого диалога о вашей нише. Демо-первый экран покажу до оплаты.</p>
+        <a class="btn-primary" href="#contacts">Обсудить проект</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec" id="about" style="border-top:1px solid var(--line-soft)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Кто я</h2>
+      <p class="mono">05 / человек, который говорит с ИИ на языке бизнеса</p>
+    </div>
+    <div class="about-grid">
+      <div class="rv">
+        <p class="about-big">Меня зовут Лада. Я создаю <em>сайты под ваш бизнес</em> — в живом диалоге с ИИ, без ручной вёрстки и шаблонных конструкторов.</p>
+        <div class="about-text">
+          <p>Малый бизнес часто остаётся без хорошего сайта: либо дорого, либо долго, либо «как у всех». Я это меняю. Вы описываете задачу своими словами, я превращаю её в сайт и проверяю результат глазами вашего клиента.</p>
+          <p>Ниша не важна — важен характер. Ремонтной бригаде нужен спокойный деловой стиль, цветочной мастерской — эмоциональный. Я настраиваю подачу под каждого.</p>
+        </div>
+        <div class="steps">
+          <div class="step rv">
+            <span class="mono">шаг 01</span>
+            <h4>Диалог</h4>
+            <p>Вы рассказываете про бизнес своими словами. Я задаю вопросы и превращаю ответы в задание для ИИ.</p>
+          </div>
+          <div class="step rv">
+            <span class="mono">шаг 02</span>
+            <h4>Демо</h4>
+            <p>Через 1–2 дня у вас уже живая страница. Смотрим вместе, что усилить, что убрать.</p>
+          </div>
+          <div class="step rv">
+            <span class="mono">шаг 03</span>
+            <h4>Запуск</h4>
+            <p>Финальные правки, публикация, домен. Сайт работает и приносит заявки — а вы не написали ни строчки кода.</p>
+          </div>
+        </div>
+      </div>
+      <div class="stats rv">
+        <div class="stat"><b data-count="6">0</b><span class="mono">работ в витрине</span></div>
+        <div class="stat"><b data-count="48" data-suffix=" ч">0</b><span class="mono">до демо-версии</span></div>
+        <div class="stat"><b data-count="100" data-suffix="%">0</b><span class="mono">без шаблонов и конструкторов</span></div>
+        <div class="stat"><b data-count="1">0</b><span class="mono">диалог — и сайт готов</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTS ================= -->
+<section class="contacts" id="contacts" style="border-top:1px solid var(--line-soft)">
+  <div class="wrap">
+    <p class="mono rv" style="margin-bottom:28px">06 / контакты · отвечаю быстро</p>
+    <h2 class="rv">Погнали<br><span class="lime">делать сайт?</span></h2>
+    <div class="socials">
+      <a class="soc rv" href="{{телеграм}}" target="_blank" rel="noopener">
+        <span class="mono">telegram</span>
+        <span class="soc-name">Написать мне</span>
+        <span class="soc-handle">ответственно и по делу</span>
+      </a>
+      <a class="soc rv" href="mailto:{{почта}}">
+        <span class="mono">почта</span>
+        <span class="soc-name">Прислать задачу</span>
+        <span class="soc-handle">опишите бизнес своими словами</span>
+      </a>
+    </div>
+    <div class="contacts-foot rv">
+      <span class="mono">работаю удалённо · по всей стране</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <span class="mono">© 2026 · Лада · сайты для малого бизнеса</span>
+    <a class="mono" href="#top">наверх ↑</a>
+  </div>
+</footer>
+
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-back" data-close></div>
+  <div class="modal-card">
+    <button class="modal-close" data-close aria-label="Закрыть">✕</button>
+    <img id="modal-img" src="" alt="">
+    <div class="modal-body">
+      <span class="mono" id="modal-niche"></span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <div class="modal-tags" id="modal-tags"></div>
+      <a class="btn-primary modal-link" id="modal-link" href="#" target="_blank" rel="noopener" style="display:none">Открыть сайт
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
